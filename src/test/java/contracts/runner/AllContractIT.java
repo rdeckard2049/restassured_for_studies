@@ -8,4 +8,5 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({UsersContractIT.class, CartsContractIT.class, ProductsContractIT.class})
-public class AllContractIT {}
+public class AllContractIT {
+}

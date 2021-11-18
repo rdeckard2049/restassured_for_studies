@@ -10,9 +10,9 @@ import lombok.Data;
 @Builder
 public class CartsData {
 
-  private ProductsData products;
-  private Integer precoTotal;
-  private Integer quantidadeTotal;
-  private String idUsuario;
-  private String _id;
+    private ProductsData products;
+    private Integer precoTotal;
+    private Integer quantidadeTotal;
+    private String idUsuario;
+    private String _id;
 }

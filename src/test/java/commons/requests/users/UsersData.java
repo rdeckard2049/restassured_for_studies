@@ -9,9 +9,9 @@ import lombok.Data;
 @Builder
 public class UsersData {
 
-  private String nome;
-  private String email;
-  private String password;
-  private String administrador;
-  private String _id;
+    private String nome;
+    private String email;
+    private String password;
+    private String administrador;
+    private String _id;
 }

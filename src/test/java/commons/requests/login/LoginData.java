@@ -9,6 +9,6 @@ import lombok.Data;
 @Builder
 public class LoginData {
 
-  private String email;
-  private String password;
+    private String email;
+    private String password;
 }

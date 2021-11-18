@@ -10,96 +10,96 @@ import static commons.HandleProperties.getValue;
 
 public class UsersRequests {
 
-  public static String _id;
-  private final HttpClient httpClient = new HttpClient();
+    public static String _id;
+    private final HttpClient httpClient = new HttpClient();
 
-  public Response getUsersRequests() {
+    public Response getUsersRequests() {
 
-    Map<String, String> headers =
-        new HashMap<String, String>() {
-          {
-            put("Content-type", "application/json");
-          }
-        };
+        Map<String, String> headers =
+            new HashMap<String, String>() {
+                {
+                    put("Content-type", "application/json");
+                }
+            };
 
-    return httpClient.getHeaders(getValue("APP_URL"), "/usuarios", headers).orElse(null);
-  }
+        return httpClient.getHeaders(getValue("APP_URL"), "/usuarios", headers).orElse(null);
+    }
 
-  public Response getUsersQueryParamRequests(String key, String value) {
+    public Response getUsersQueryParamRequests(String key, String value) {
 
-    Map<String, String> headers =
-        new HashMap<String, String>() {
-          {
-            put("Content-type", "application/json");
-          }
-        };
+        Map<String, String> headers =
+            new HashMap<String, String>() {
+                {
+                    put("Content-type", "application/json");
+                }
+            };
 
-    Map<String, String> params =
-        new HashMap<String, String>() {
-          {
-            put(key, value);
-          }
-        };
+        Map<String, String> params =
+            new HashMap<String, String>() {
+                {
+                    put(key, value);
+                }
+            };
 
-    return httpClient.getQuery(getValue("APP_URL"), "/usuarios", headers, params).orElse(null);
-  }
+        return httpClient.getQuery(getValue("APP_URL"), "/usuarios", headers, params).orElse(null);
+    }
 
-  public Response postUsersRequests(String name, String email, String password) {
+    public Response postUsersRequests(String name, String email, String password) {
 
-    Map<String, String> headers =
-        new HashMap<String, String>() {
-          {
-            put("Content-type", "application/json");
-          }
-        };
+        Map<String, String> headers =
+            new HashMap<String, String>() {
+                {
+                    put("Content-type", "application/json");
+                }
+            };
 
-    Map<String, String> body =
-        new HashMap<String, String>() {
-          {
-            put("nome", name);
-            put("email", email);
-            put("password", password);
-            put("administrador", "true");
-          }
-        };
-    return httpClient.post(getValue("APP_URL"), "/usuarios", headers, body).orElse(null);
-  }
+        Map<String, String> body =
+            new HashMap<String, String>() {
+                {
+                    put("nome", name);
+                    put("email", email);
+                    put("password", password);
+                    put("administrador", "true");
+                }
+            };
+        return httpClient.post(getValue("APP_URL"), "/usuarios", headers, body).orElse(null);
+    }
 
-  public Response putUsersRequests(String _id, String name, String email, String password) {
+    public Response putUsersRequests(String _id, String name, String email, String password) {
 
-    Map<String, String> headers =
-        new HashMap<String, String>() {
-          {
-            put("Content-type", "application/json");
-          }
-        };
+        Map<String, String> headers =
+            new HashMap<String, String>() {
+                {
+                    put("Content-type", "application/json");
+                }
+            };
 
-    Map<String, String> body =
-        new HashMap<String, String>() {
-          {
-            put("nome", name);
-            put("email", email);
-            put("password", password);
-            put("administrador", "true");
-          }
-        };
-    return httpClient.put(getValue("APP_URL"), "/usuarios/" + _id, headers, body).orElse(null);
-  }
+        Map<String, String> body =
+            new HashMap<String, String>() {
+                {
+                    put("nome", name);
+                    put("email", email);
+                    put("password", password);
+                    put("administrador", "true");
+                }
+            };
+        return httpClient.put(getValue("APP_URL"), "/usuarios/" + _id, headers, body).orElse(null);
+    }
 
-  public Response deleteUsersRequests(String _id) {
+    public Response deleteUsersRequests(String _id) {
 
-    Map<String, String> headers =
-        new HashMap<String, String>() {
-          {
-            put("Content-type", "application/json");
-          }
-        };
+        Map<String, String> headers =
+            new HashMap<String, String>() {
+                {
+                    put("Content-type", "application/json");
+                }
+            };
 
-    return httpClient.delete(getValue("APP_URL"), "/usuarios/" + _id, headers).orElse(null);
-  }
+        return httpClient.delete(getValue("APP_URL"), "/usuarios/" + _id, headers).orElse(null);
+    }
 
-  public void getUserId(String name, String email, String password) {
-    Response response = postUsersRequests(name, email, password);
-    _id = response.getBody().jsonPath().get("_id").toString();
-  }
+    public void getUserId(String name, String email, String password) {
+        Response response = postUsersRequests(name, email, password);
+        _id = response.getBody().jsonPath().get("_id").toString();
+    }
 }

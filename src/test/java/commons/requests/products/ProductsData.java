@@ -9,9 +9,9 @@ import lombok.Data;
 @Builder
 public class ProductsData {
 
-  private String nome;
-  private Integer preco;
-  private String descricao;
-  private Integer quantidade;
-  private String _id;
+    private String nome;
+    private Integer preco;
+    private String descricao;
+    private Integer quantidade;
+    private String _id;
 }
